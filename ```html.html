@@ -1,0 +1,157 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Question For You ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 45px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .heart {
+            font-size: 70px;
+            animation: heartbeat 1.2s infinite;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ff4f81;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 28px;
+            margin: 8px;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background: #ff4f81;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            background: #ff2f6d;
+        }
+
+        #noBtn {
+            background: #eee;
+            color: #555;
+            position: relative;
+        }
+
+        #noBtn:hover {
+            background: #ddd;
+        }
+
+        #response {
+            display: none;
+            margin-top: 25px;
+            font-size: 22px;
+            color: #ff4f81;
+            font-weight: bold;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤️</div>
+
+        <h1>I've got a question for you...</h1>
+
+        <p>
+            I really like you, and I don't want to just keep wondering...
+            <br><br>
+            <strong>Will you be my girlfriend? 🥺❤️</strong>
+        </p>
+
+        <button id="yesBtn" onclick="sayYes()">
+            Yes ❤️
+        </button>
+
+        <button id="noBtn" onclick="sayNo()">
+            No 😭
+        </button>
+
+        <div id="response"></div>
+
+    </div>
+
+    <script>
+
+        function sayYes() {
+            const response = document.getElementById("response");
+
+            response.style.display = "block";
+
+            response.innerHTML =
+                "now send me money to prove that you really do❤️🥹";
+
+            document.getElementById("yesBtn").style.display = "none";
+            document.getElementById("noBtn").style.display = "none";
+        }
+
+        function sayNo() {
+            const noBtn = document.getElementById("noBtn");
+
+            const x = Math.random() * 250 - 125;
+            const y = Math.random() * 150 - 75;
+
+            noBtn.style.transform =
+                `translate(${x}px, ${y}px)`;
+        }
+
+    </script>
+
+</body>
+</html>
+```
